@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/dashboard-casal/sw.js', { scope: '/dashboard-casal/' })})}
