@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f3f4f6;
+}
+
+/* src/index.css - Adicione isso ao final do arquivo */
+
+/* Define a animação de rotação */
+
+@keyframes wave-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.wave-anim {
+  /* A onda tem o dobro do tamanho e desliza para a esquerda infinitamente */
+  animation: wave-slide 3s linear infinite;
+}
+
+/* A onda base */
+.wave {
+  position: absolute;
+  left: -50%; /* Começa fora da tela */
+  width: 200%; /* Muito largo para cobrir a rotação */
+  height: 200%;
+  background-color: #60a5fa; /* Cor da onda (blue-400 do tailwind) */
+  opacity: 0.4;
+  border-radius: 40%; /* Deixa meio quadrado meio redondo */
+  animation: wave-spin 6s linear infinite; /* Gira devagar */
+}
+
+/* Uma segunda onda, um pouco diferente, para dar profundidade */
+.wave:nth-child(2) {
+  top: 3%;
+  opacity: 0.2;
+  border-radius: 45%;
+  animation: wave-spin 8s linear reverse infinite; /* Gira ao contrário */
+}
+
+.percent{
+  margin-top: 48px;
+}
